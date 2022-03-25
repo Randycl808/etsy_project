@@ -2,8 +2,6 @@ import React from "react";
 import { AuthConsumer } from "../../providers/AuthProvider";
 
 
-
-
 class HomeClass extends React.Component {
   render() {
     return (
