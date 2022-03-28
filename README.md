@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project has devise_token_auth, react_router, etc setup.
+- uses rails v6, ruby 3.0.2
+- more info about the project
 
-Things you may want to cover:
+## Getting starter (how to use)
 
-* Ruby version
+## Clone
+1. git clone git@github.com:jimibue/starter-rv6.git <project-name>
+2. cd <project-name>
 
-* System dependencies
+### rails stuff
+1. renaming our database in the config/database.yml file
+2. bundle
+3. rails db:create db:migrate (db:seed if needed/applicable)
+4. rails s -p 3001
 
-* Configuration
+### react stuff
+> make sure in  client folder
+1. yarn
+2. yarn start
 
-* Database creation
+### git stuff
+1. git remote rm origin
+2. create new repo on github
+3. git remote add origin <ssh-link>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
