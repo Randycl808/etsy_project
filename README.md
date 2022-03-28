@@ -154,6 +154,13 @@ Rails.application.routes.draw do
 end
 ```
 
+### main features on backend
+  > we to protect routes on the backend
+  before_action :authenticate_user!
+
+ > way to  get 'logged in user' on the backend
+  current_user
+
 
 
 
