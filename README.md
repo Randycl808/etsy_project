@@ -7,8 +7,8 @@ This project has devise_token_auth, react_router, etc setup.
 ## Getting starter (how to use)
 
 ## Clone
-1. git clone git@github.com:jimibue/starter-rv6.git <project-name>
-2. cd <project-name>
+1. git clone git@github.com:jimibue/starter-rv6.git 'project-name'
+2. cd 'project-name'
 
 ### rails stuff
 1. renaming our database in the config/database.yml file
