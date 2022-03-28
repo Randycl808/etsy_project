@@ -118,6 +118,43 @@ routes you do need to be logged in to see..
 ```
 
 
+# Backend
+1. add devise_token_auth to gem file
+2. rails g devise_token_auth:install User api/auth
+this command does a lot for us
+- it adds the routes/controller stuff
+- it create our model (in this case the user model)
+
+3. add `extend Devise::Models` to user.rb file
+4. added AddTrackableToUsers migration
+```ruby
+class AddTrackableToUsers < ActiveRecord::Migration[6.0]
+  def change
+      ## Trackable
+      add_column :users, :sign_in_count, :integer, :default => 0
+      add_column :users, :current_sign_in_at, :datetime
+      add_column :users, :last_sign_in_at, :datetime
+      add_column :users, :current_sign_in_ip, :string
+      add_column :users, :last_sign_in_ip, :string
+  end
+end
+
+```
+
+
+### routes
+
+we have all the routes defined and controller action setup for us...
+```
+Rails.application.routes.draw do
+  # generates all devise routes
+  mount_devise_token_auth_for 'User', at: 'api/auth'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+end
+```
+
+
 
 
 
