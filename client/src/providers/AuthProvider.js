@@ -21,7 +21,7 @@ export const AuthConsumer = AuthContext.Consumer
 // create Provider
 const AuthProvider = ({children})=>{
     const navigate = useNavigate()
-    // a null user is a not auth user (not logged)
+    // a null user is a not authed user (ie not logged)
     // if I have a user they will authenticated
     // user : {id email,...more}
     const [user, setUser] = useState(null)
@@ -31,13 +31,18 @@ const AuthProvider = ({children})=>{
     const handleRegister = async (user)=>{
         console.log('going to create user in handleRegister:', user)
         try{
+            // no token needed
             let res = await axios.post('/api/auth',user)
+            //res.data.data is the user
+            // behind the scenes
+            // there is also a token being sent back here, that
+            // devise-axios is keeping track of
             setUser(res.data.data)
             navigate('/')
             // setUser
         } catch(err){
-          // potentially a lot of work here
-          // show why it didn't work (good UX)
+            // potentially a lot of work here
+            //TODO: show why it didn't work (good UX)
             alert('error: unable to register, do you have a unique/valid email, is password greater than 6')
             console.log(err)
         }
@@ -48,6 +53,7 @@ const AuthProvider = ({children})=>{
         try{
             // this call will give us back the user from DB
             // assuming email and password are correct
+            // no token needed
             let res = await axios.post('/api/auth/sign_in',user)
             setUser(res.data.data)
             navigate('/')
@@ -62,8 +68,11 @@ const AuthProvider = ({children})=>{
     const handleLogout = async ()=>{
         console.log('going to logout user in handleLogin:')
         try{
-            // NEED TO SEND TOKEN: DONe WITH HELP INITMIDDLEWARE
+            // NEED TO SEND TOKEN: DONE WITH HELP INITMIDDLEWARE
+            // token needed: token is what is going to be used to find
+            // the user
             let res = await axios.delete('/api/auth/sign_out')
+            // no token given back
             setUser(null)
             navigate('/login')
             // setUser

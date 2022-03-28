@@ -15,6 +15,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      {/* When our app first mounts FetchUser Runs */}
       <FetchUser>
         <>
           <Routes>
