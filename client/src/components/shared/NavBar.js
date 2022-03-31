@@ -13,8 +13,8 @@ const Navbar = () => {
     }
     return (
       <>
-        <Link to="/login">login</Link>
-        <Link to="/register">register</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
       </>
     );
   };
