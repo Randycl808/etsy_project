@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./providers/AuthProvider";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import { initMiddleware } from 'devise-axios';
 
 // this going to get token from api calls and set them to be sent on the

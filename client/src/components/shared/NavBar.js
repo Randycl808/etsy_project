@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-
-const Navbar = () => {
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+const NavBar = () => {
   const auth = useContext(AuthContext);
   //   const {user} = useContext(AuthContext);
   //    if(user) => logout
@@ -12,35 +12,53 @@ const Navbar = () => {
       return <button onClick={auth.handleLogout}>Logout</button>;
     }
     return (
-      <>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-      </>
+      <Nav>
+        <Nav.Link href="/login">Login</Nav.Link>
+        <Nav.Link href="/register">Register</Nav.Link>
+      </Nav>
     );
   };
 
   const renderLeft = () => {
     if (auth.user) {
       return (
-        <>
-          <Link to="/">Products</Link>
-          <Link to="/find">Search Products</Link>
-          <Link to="/categories">Product Categories</Link>
-          <Link to="/sellers">Sellers</Link>
-          <Link to="/charts">Chart</Link>
-        </>
+        <Navbar>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Products</Nav.Link>
+              <Nav.Link href="/find">Search Products</Nav.Link>
+              <Nav.Link href="/categories">Categories</Nav.Link>
+              <NavDropdown title="More" id="collasible-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to="/sellers">Sellers</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/charts">Charts</Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       );
     }
   };
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div>
-        <Link to="/login"></Link>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="dark"
+      variant="dark"
+      style={{ display: "flex", justifyContent: "space-between" }}
+    >
+      <Container>
+        <Navbar.Brand href="/">Etsy</Navbar.Brand>
         {renderLeft()}
 
-      </div>
-      <div>{renderRightNav()}</div>
-    </div>
+        <Link to="/login"></Link>
+        {renderRightNav()}
+      </Container>
+    </Navbar>
   );
 };
-export default Navbar;
+export default NavBar;
