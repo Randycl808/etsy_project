@@ -1,7 +1,10 @@
 const Charts = () => {
   return (
-    <h1>Charts</h1>
-  )
-}
+    <h1>
+      Charts
+      <hr></hr>
+    </h1>
+  );
+};
 
-export default Charts
+export default Charts;

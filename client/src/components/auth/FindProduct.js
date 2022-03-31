@@ -1,7 +1,10 @@
 const FindProduct = () => {
   return (
-    <h1>Find Product</h1>
-  )
-}
+    <h1>
+      Find Product
+      <hr></hr>
+    </h1>
+  );
+};
 
-export default FindProduct
+export default FindProduct;

@@ -1,7 +1,10 @@
 const Products = () => {
   return (
-    <h1>Products</h1>
-  )
-}
+    <h1>
+      Products
+      <hr></hr>
+    </h1>
+  );
+};
 
-export default Products
+export default Products;
