@@ -1,7 +1,10 @@
 const Sellers = () => {
   return (
-    <h1>Sellers</h1>
-  )
-}
+    <h1>
+      Sellers
+      <hr></hr>
+    </h1>
+  );
+};
 
-export default Sellers
+export default Sellers;

@@ -1,9 +1,10 @@
-
-
 const Categories = () => {
   return (
-    <h1>Categories</h1>
-  )
-}
+    <h1>
+      Categories
+      <hr></hr>
+    </h1>
+  );
+};
 
-export default Categories
+export default Categories;

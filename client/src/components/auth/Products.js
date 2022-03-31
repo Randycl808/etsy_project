@@ -1,27 +1,32 @@
-import axios from 'axios'
-import { ListGroup, Table } from 'react-bootstrap'
-import { useEffect, useState } from 'react'
+import axios from "axios";
+import { ListGroup, Table } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 const Products = () => {
-  const [sellerProducts, setSellerProducts] = useState ([])
+  const [sellerProducts, setSellerProducts] = useState([]);
 
-  useEffect (() => {
-    getSellerProducts()
-  }, [])
+  useEffect(() => {
+    getSellerProducts();
+  }, []);
 
   const normalizeData = (rawData) => {
-    let sellers = rawData.map((p) => p.seller_id)
-    let uniqueIds = [... new Set(sellers)]
+    let sellers = rawData.map((p) => p.seller_id);
+    let uniqueIds = [...new Set(sellers)];
     let sellerProductData = uniqueIds.map((uid) => {
-      let products = rawData.filter(p => uid == p.seller_id)
-      let {first_name, last_name, email, seller_id} = products[0]
-      return {name: `${first_name} ${last_name}`, email: email, products: products, id: seller_id}
-    })
-    return sellerProductData
-  }
+      let products = rawData.filter((p) => uid == p.seller_id);
+      let { first_name, last_name, email, seller_id } = products[0];
+      return {
+        name: `${first_name} ${last_name}`,
+        email: email,
+        products: products,
+        id: seller_id,
+      };
+    });
+    return sellerProductData;
+  };
 
   const renderRows = (products) => {
-    console.log(products)
+    console.log(products);
     return products.map((p) => {
       return (
         <tr key={p.id}>
@@ -30,20 +35,20 @@ const Products = () => {
           <td>{p.description}</td>
           <td>{p.category}</td>
         </tr>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const renderData = () => {
     return sellerProducts.map((seller) => {
-      console.log(seller)
+      console.log(seller);
       return (
         <ListGroup.Item key={seller.id}>
           <div>
             <h1>{seller.name}</h1>
             <p>{seller.email}</p>
           </div>
-          <Table striped bordered hover variant='dark'>
+          <Table striped bordered hover variant="dark">
             <thead>
               <tr>
                 <th>Name</th>
@@ -55,27 +60,27 @@ const Products = () => {
             <tbody>{renderRows(seller.products)}</tbody>
           </Table>
         </ListGroup.Item>
-      )
-    })
-  }
-  
+      );
+    });
+  };
+
   const getSellerProducts = async () => {
     try {
-      let res = await axios.get('/api/products')
-      let normalizedSellerProducts = normalizeData(res.data)
-      setSellerProducts(normalizedSellerProducts)
+      let res = await axios.get("/api/products");
+      let normalizedSellerProducts = normalizeData(res.data);
+      setSellerProducts(normalizedSellerProducts);
     } catch (error) {
-      alert ('Error occurred getting products')
-      console.log(error)
+      alert("Error occurred getting products");
+      console.log(error);
     }
-  }
+  };
   return (
     <>
-    <h1>Products</h1>
-    <ListGroup>{renderData()}</ListGroup>
-    {JSON.stringify(sellerProducts)}
+      <h1>Products</h1>
+      <ListGroup>{renderData()}</ListGroup>
+      {JSON.stringify(sellerProducts)}
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
