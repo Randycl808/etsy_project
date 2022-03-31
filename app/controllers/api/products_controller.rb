@@ -5,7 +5,7 @@ before_action :set_product, only: [:show, :destroy, :update]
 
 
   def index 
-    render json: Product.all
+    render json: Product.products
   end
 
   def show 
