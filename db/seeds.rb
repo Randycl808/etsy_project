@@ -21,7 +21,8 @@ b2 = Buyer.create(first_name:'Sara', last_name:'Hefner', max_price:150, category
 
 p1 = Product.create(price:25.00, description:'Earrings', category:'Jewelry', name: 'Purple Hoop Earrings', seller_id:s1.id )
 p2 = Product.create(price:50.00, description:'Vans', category:'Shoes', name:'Black Old Skool', seller_id:s2.id)
-
+p3 = Product.create(price:250.00, description:'Fitness Equipment', category:'Fitness Equipment', name:'Treadmill', seller_id:s2.id)
+p4 = Product.create(price:20.00, description:'Vans', category:'Sports Equipment', name:'BasketBall', seller_id:s1.id)
 
 puts " All Users: #{User.all.length}"
 puts " All Sellers: #{Seller.all.length}"
