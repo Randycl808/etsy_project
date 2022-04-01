@@ -26,12 +26,22 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Products</Nav.Link>
-              <Nav.Link href="/find">Search Products</Nav.Link>
-              <Nav.Link href="/categories">Categories</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                Products
+              </Nav.Link>
+              <Nav.Link as={Link} to="/find">
+                Search Products
+              </Nav.Link>
+              <Nav.Link as={Link} to="/categories">
+                Categories
+              </Nav.Link>
               <NavDropdown title="More" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/sellers">Sellers</NavDropdown.Item>
-                <NavDropdown.Item href="/charts">Charts</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/sellers">
+                  Sellers
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/charts">
+                  Charts
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
