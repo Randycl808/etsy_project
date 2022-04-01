@@ -1,7 +1,7 @@
 const FindProduct = () => {
   return (
     <h1>
-      Find Product
+      Search Products
       <hr></hr>
     </h1>
   );

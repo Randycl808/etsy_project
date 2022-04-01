@@ -45,8 +45,12 @@ const Products = () => {
       return (
         <ListGroup.Item key={seller.id}>
           <div>
+            <h4>
+              <u>Seller:</u>
+            </h4>
             <h1>{seller.name}</h1>
-            <p>{seller.email}</p>
+            <h6>{seller.email}</h6>
+            <hr></hr>
           </div>
           <Table striped bordered hover variant="dark">
             <thead>
