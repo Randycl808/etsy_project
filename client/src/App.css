@@ -1,5 +1,130 @@
+.container {
+color:rgb(38, 141, 179)
+}
+.mainbox {
+width: 400px;
+margin: 10px 220px;
+position: relative;
+justify-content: center;
+align-items: center;
+text-align: center;
+background-color: rgba(220, 232, 232, 0.292);
+
+}
+.mainbox2 {
+width: 400px;
+position: relative;
+justify-content: center;
+
+background-color: rgba(220, 232, 232, 0.292);
+
+}
+
+.signin {
+width: 400px;
+}
+.head {
+
+position: flex;
+}
+.heading {
+justify-content: center;
+margin: 10px 150px;
+}
+.Bgc {
+background-color: rgba(196, 193, 193, 0.628);
+}
+.row {
+position: relative;
+text-align: center;
+justify-content: center;
+
+}
+.login{
+margin:20px 370px;
+position: relative;
+}
+.datarow2 {
+background:rgb(0, 0, 0);
+color: rgb(47, 164, 207);
+font-size: 20px;
+position: relative;
+}
+
+.selectBar {
+width:300px;
+margin:20px;
+padding: 20px;
+}
+
+.nav {
+display: flex;
+align-items: center;
+padding: 10px 30px;
+margin: 10px 10px;
+width: 70px;
+
+}
+.button {
+font-weight: 10px;
+width: 5px;
+}
+.flex-parent {
+display: flex;
+}
+.flex-child {
+flex: 1;
+}
+
+.navmore {
+text-decoration: none;
+color: #5e6064;
+}
+
+Table {
+width: auto;
+margin-bottom: 10px;
+text-align: center;
+}
+.datarow {
+background-color: rgb(240, 236, 236)!important;
+color: black!important;
+font-size: 18px!important;
+/* position:relative; */
+width: 30px ;
+margin: 0px 100px 0px 340px;
+/* text-align: center; */
+/* justify-content: center; */
+/* align-items: center; */
+}
+.box {
+background-color: rgba(29, 28, 28, 0.926);
+color: rgb(234, 231, 231);
+
+
+}
+
+.seller {
+margin: 20px;
+padding: 0px;
+text-align:left;
+position: relative;
+}
+
+.header {
+font-family: 'Vidaloka', serif;
+text-shadow: 2px 1px black;
+text-align: center;
+
+}
+.headbar {
+background-color: rgb(47, 164, 207);
+text-shadow: 1px .01px rgba(47, 47, 47, 0.10);
+text-align: center;
+}
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ListGroup, Table } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import {useEffect,useState} from "react";
 
 const Products = () => {
   const [sellerProducts, setSellerProducts] = useState([]);
@@ -76,7 +76,8 @@ const Products = () => {
   };
   return (
     <>
-      <h1>Products</h1>
+      <h1 className=" headbar header  text-white">Products</h1>
+     
       <ListGroup>{renderData()}</ListGroup>
       {JSON.stringify(sellerProducts)}
     </>
