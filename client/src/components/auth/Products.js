@@ -92,7 +92,7 @@ const Products = () => {
       <h1 className=" headbar header  text-white">Products</h1>
      
       <ListGroup>{renderData()}</ListGroup>
-      {JSON.stringify(sellerProducts)}
+      {/* {JSON.stringify(sellerProducts)} */}
     </>
   );
 };
