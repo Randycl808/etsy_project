@@ -9,13 +9,19 @@ const NavBar = () => {
   //    if(!user) => login/register
   const renderRightNav = () => {
     if (auth.user) {
-      return <button onClick={auth.handleLogout}>Logout</button>;
+      return <button type="button" className="btn btn-outline-info waves-effect" onClick={auth.handleLogout}>Logout</button>;
     }
     return (
       <Nav>
-        <Nav.Link href="/login">Login</Nav.Link>
-        <Nav.Link href="/register">Register</Nav.Link>
-      </Nav>
+        <div className="navP flex-parent">
+      <div className="nav1 flex-child">
+        <Nav.Link type="button" className="nav btn btn-outline-info waves-effect text-white" href="/login">Login</Nav.Link>
+        </div>
+        <div className="nav1 flex-child">
+          <Nav.Link type="button" className="nav btn btn-outline-info waves-effect text-white" href="/register ">Register</Nav.Link>
+          </div>
+          </div>
+        </Nav>
     );
   };
 
@@ -42,6 +48,7 @@ const NavBar = () => {
                 <NavDropdown.Item as={Link} to="/charts">
                   Charts
                 </NavDropdown.Item>
+                
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

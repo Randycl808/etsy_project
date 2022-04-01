@@ -1,9 +1,12 @@
 const FindProduct = () => {
   return (
-    <h1>
-      Search Products
+    <div className="headbar">
+    <h1 className="App header headbar text-white">
+        Find Product
+        
       <hr></hr>
-    </h1>
+      </h1>
+      </div>
   );
 };
 
