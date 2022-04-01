@@ -88,7 +88,7 @@ const Products = () => {
     <>
       <h1>Products</h1>
       <ListGroup>{renderData()}</ListGroup>
-      {JSON.stringify(sellerProducts)}
+      {/* {JSON.stringify(sellerProducts)} */}
     </>
   );
 };
