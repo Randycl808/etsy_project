@@ -30,12 +30,8 @@ const NavBar = () => {
               <Nav.Link href="/find">Search Products</Nav.Link>
               <Nav.Link href="/categories">Categories</Nav.Link>
               <NavDropdown title="More" id="collasible-nav-dropdown">
-                <NavDropdown.Item>
-                  <Link to="/sellers">Sellers</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to="/charts">Charts</Link>
-                </NavDropdown.Item>
+                <NavDropdown.Item href="/sellers">Sellers</NavDropdown.Item>
+                <NavDropdown.Item href="/charts">Charts</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
