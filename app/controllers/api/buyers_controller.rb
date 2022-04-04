@@ -34,7 +34,7 @@ before_action :set_buyer, only: [:show, :destroy, :update]
   end
 
   private
-  #function that allows @seller to find specific seller
+  #function that allows @seller to find specific buyer
   def set_buyer
       @buyer = Buyer.find(params[:id])
   end

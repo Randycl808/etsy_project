@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import {Form,Button} from "react-bootstrap";
-
-
+import { Form, Button } from "react-bootstrap";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -11,8 +9,6 @@ const Login = () => {
   // not need but nice for UX
   // const [confirmPassword, setConfirmPassword] = useState('')
 
-  
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     auth.handleLogin({ email, password });
@@ -20,10 +16,10 @@ const Login = () => {
   return (
     <div className=" head">
       <h1 className="login">Login</h1>
-      
-      
+
       <Form onSubmit={handleSubmit} className="container">
         <div className="mainbox">
+          
   {/* <!-- Email input --> */}
   <div className="form-outline mb-4">
     {/* <label class="form-label" for="form2Example1">Email address:</label> */}
@@ -77,9 +73,66 @@ const Login = () => {
       {/* <i className="fab fa-github"></i> */}
     </button>
           </div>
-          </div>
-</Form>
 
+          {/* <!-- 2 column grid layout for inline styling --> */}
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
+              {/* <!-- Checkbox --> */}
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="form2Example31"
+                />
+                <label className="form-check-label" form="form2Example31">
+                  {" "}
+                  Remember me{" "}
+                </label>
+              </div>
+            </div>
+
+            <div className="col">
+              {/* <!-- Simple link --> */}
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+
+          {/* <!-- Submit button --> */}
+          <button
+            type="button"
+            className=" signin btn btn-primary btn-block mb-4"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            Sign in
+          </button>
+
+          {/* <!-- Register buttons --> */}
+          <div className="text-center">
+            <p>
+              Not a member? <a href="/register">Register</a>
+            </p>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-google"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-github"></i>
+            </button>
+          </div>
+        </div>
+      </Form>
     </div>
   );
 };

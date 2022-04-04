@@ -34,7 +34,7 @@ before_action :set_product, only: [:show, :destroy, :update]
   end
 
   private
-  #function that allows @seller to find specific seller
+  #function that allows @seller to find specific product
   def set_product
       @product = Product.find(params[:id])
   end
