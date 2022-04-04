@@ -4,9 +4,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Form, Button } from "react-bootstrap";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const auth = useContext(AuthContext);
   // not need but nice for UX
   // const [confirmPassword, setConfirmPassword] = useState('')

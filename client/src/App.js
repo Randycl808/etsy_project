@@ -38,7 +38,14 @@ function App() {
           </Routes>
         </>
       </FetchUser>
-      <p>Footer for all pages</p>
+      <footer>
+      <div className="footer3">
+      <div className="footer1">
+        <p>Etsy is powered by 100% organic energy</p>
+      </div>
+      
+      </div>
+    </footer>
     </div>
   );
 }
