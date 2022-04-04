@@ -55,12 +55,12 @@ const AuthProvider = ({children})=>{
             // assuming email and password are correct
             // no token needed
             let res = await axios.post('/api/auth/sign_in',user)
+            // setUser
             setUser(res.data.data)
             navigate('/')
-            // setUser
         } catch(err){
-            // potentailly a lot of work here
-            alert('error Logining in is email and password valid?')
+            // potentially a lot of work here
+            alert('error Logging in is email and password valid?')
             console.log(err)
         }
     }
