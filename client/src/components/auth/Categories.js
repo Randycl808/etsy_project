@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useAxios from "axios-hooks";
-import {Form,Table} from "react-bootstrap";
-
+import { Form, Table } from "react-bootstrap";
 
 const Categories = () => {
   const [{ data: products, loading, error }] = useAxios("/api/products");
@@ -52,20 +51,16 @@ const Categories = () => {
 
     return (
       <div className="mainbox box1">
-      <Table striped bordered hover className=" box1  table table-striped table-hover ">
-        <thead className="Bgc">
-          <tr key={filteredCategories.id} className="Bgc ">
-            <th>Category</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody >
-          
-            {filteredCategories.map((c) => (
-            
-            <tr key={c.id}>
-              <td className="Bgc">{c.category}</td>
-              <td className="Bgc">{c.price}</td>
+        <Table
+          striped
+          bordered
+          hover
+          className=" box1  table table-striped table-hover "
+        >
+          <thead className="Bgc">
+            <tr key={filteredCategories.id} className="Bgc ">
+              <th>Category</th>
+              <th>Price</th>
             </tr>
             ))}
             
@@ -85,7 +80,3 @@ const Categories = () => {
 };
 
 export default Categories;
-
-
-
-
