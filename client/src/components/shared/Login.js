@@ -1,18 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import {Form,Button} from "react-bootstrap";
-
-
+import { Form, Button } from "react-bootstrap";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const auth = useContext(AuthContext);
   // not need but nice for UX
   // const [confirmPassword, setConfirmPassword] = useState('')
 
-  
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     auth.handleLogin({ email, password });
@@ -20,98 +16,95 @@ const Login = () => {
   return (
     <div className=" head">
       <h1 className="login">Login</h1>
-      
-      
+
       <Form onSubmit={handleSubmit} className="container">
         <div className="mainbox">
-  {/* <!-- Email input --> */}
-  <div className="form-outline mb-4">
-    {/* <label class="form-label" for="form2Example1">Email address:</label> */}
-            <input value={email} onChange={(e)=>setEmail(e.target.value)}type="email" id="form2Example1" className="form-control" placeholder="Email Address"/>
-  </div>
-
-  {/* <!-- Password input --> */}
-  <div className="form-outline mb-4">
-    {/* <label class="form-label" for="form2Example2">Password:</label> */}
-    <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" id="form2Example2" className="form-control" placeholder="Password"/>
-  </div>
-
-  {/* <!-- 2 column grid layout for inline styling --> */}
-  <div className="row mb-4">
-    <div className="col d-flex justify-content-center">
-      {/* <!-- Checkbox --> */}
-      <div className="form-check">
-        <input  className="form-check-input" type="checkbox" value="" id="form2Example31"  />
-        <label className="form-check-label" for="form2Example31"> Remember me </label>
-      </div>
-    </div>
-
-    <div className="col">
-      {/* <!-- Simple link --> */}
-      <a href="#!">Forgot password?</a>
-    </div>
-  </div>
-
-  {/* <!-- Submit button --> */}
-  <button type="button" className=" signin btn btn-primary btn-block mb-4" onClick={(e) => {
-            handleSubmit(e);
-          }}>Sign in</button>
-
-  {/* <!-- Register buttons --> */}
-  <div className="text-center">
-    <p>Not a member? <a href="/register">Register</a></p>
-
-    <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-facebook-f"></i>
-    </button>
-
-    <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-google"></i>
-    </button>
-
-    <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-github"></i>
-    </button>
+          {/* <!-- Email input --> */}
+          <div className="form-outline mb-4">
+            {/* <label class="form-label" for="form2Example1">Email address:</label> */}
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              id="form2Example1"
+              className="form-control"
+              placeholder="Email Address"
+            />
           </div>
-          </div>
-</Form>
 
+          {/* <!-- Password input --> */}
+          <div className="form-outline mb-4">
+            {/* <label class="form-label" for="form2Example2">Password:</label> */}
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              id="form2Example2"
+              className="form-control"
+              placeholder="Password"
+            />
+          </div>
+
+          {/* <!-- 2 column grid layout for inline styling --> */}
+          <div className="row mb-4">
+            <div className="col d-flex justify-content-center">
+              {/* <!-- Checkbox --> */}
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="form2Example31"
+                />
+                <label className="form-check-label" form="form2Example31">
+                  {" "}
+                  Remember me{" "}
+                </label>
+              </div>
+            </div>
+
+            <div className="col">
+              {/* <!-- Simple link --> */}
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+
+          {/* <!-- Submit button --> */}
+          <button
+            type="button"
+            className=" signin btn btn-primary btn-block mb-4"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            Sign in
+          </button>
+
+          {/* <!-- Register buttons --> */}
+          <div className="text-center">
+            <p>
+              Not a member? <a href="/register">Register</a>
+            </p>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-google"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" className="btn btn-link btn-floating mx-1">
+              <i className="fab fa-github"></i>
+            </button>
+          </div>
+        </div>
+      </Form>
     </div>
   );
 };
 export default Login;
-
-{
-  /* <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>; */
-}
-// {
-//   <p>email</p>
-//         <input value={email} onChange={(e) => setEmail(e.target.value)} />
-//         <p>password</p>
-//         <input value={password} onChange={(e) => setPassword(e.target.value)} />
-//         <button>login</button>
-//         <hr></hr>
-// }

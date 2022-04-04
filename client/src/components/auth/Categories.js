@@ -20,62 +20,69 @@ const Categories = () => {
 
   const handleSelect = (event) => {
     let selectedCategory = event.target.value;
-    
-    setFilterCategories(products.filter((p) => p.category === selectedCategory));
+
+    setFilterCategories(
+      products.filter((p) => p.category === selectedCategory)
+    );
   };
 
   const renderSelect = (categories) => {
-    console.log(categories)
+    console.log(categories);
     return (
       <div key={categories.id} className="selectBar">
-      <Form.Select defaultValue="" label='Select'  onChange={handleSelect} aria-label="Select Category">
-          <option value="" disabled hidden>Please Choose...</option>
-        {categories.map((category) => (
-          <option key={category} value={category}>{category}</option>
-        ))}
+        <Form.Select
+          defaultValue=""
+          label="Select"
+          onChange={handleSelect}
+          aria-label="Select Category"
+        >
+          <option value="" disabled hidden>
+            Please Choose...
+          </option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </Form.Select>
-        </div>
+      </div>
     );
   };
 
   const getSelect = () => {
     let uniqueCategories = getUniqueCategories();
     return renderSelect(uniqueCategories);
-   
   };
 
   const renderFilteredCategoryProperties = () => {
     if (!filteredCategories) {
-      return <p>Please Choose a Category to continue</p>;
+      return <h3>Please Choose a Category to continue</h3>;
     }
 
     return (
       <div className="mainbox">
-      <Table striped bordered hover>
-        <thead>
-          <tr key={filteredCategories.id} className="Bgc">
-            <th>Category</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            {filteredCategories.map((c) => (
-            
-            <tr key={c.id}>
-              <td className="">{c.category}</td>
-              <td className="">{c.price}</td>
+        <Table striped bordered hover>
+          <thead>
+            <tr key={filteredCategories.id} className="Bgc">
+              <th>Category</th>
+              <th>Price</th>
             </tr>
+          </thead>
+          <tbody>
+            {filteredCategories.map((c) => (
+              <tr key={c.id}>
+                <td className="">{c.category}</td>
+                <td className="">{c.price}</td>
+              </tr>
             ))}
-            
-        </tbody>
+          </tbody>
         </Table>
-        </div>
+      </div>
     );
   };
 
   return (
-    <div >
+    <div>
       <h1 className="App header headbar text-white">Categories</h1>
       {getSelect()}
       {renderFilteredCategoryProperties()}
@@ -84,9 +91,6 @@ const Categories = () => {
 };
 
 export default Categories;
-
-
-
 
 //import axios from "axios";
 // import { ListGroup, Table } from "react-bootstrap";
@@ -120,10 +124,10 @@ export default Categories;
 //     console.log(products);
 //     return products.map((p) => {
 //       return (
-       
+
 //         <tr key={p.id}>
 //             <td className="datarow">{p.category}</td>
-            
+
 //         </tr>
 //       );
 //     });
@@ -134,14 +138,12 @@ export default Categories;
 //       console.log(seller);
 //       return (
 //         <ListGroup.Item key={seller.id}>
-          
-          
+
 //                 <div className="datarow ">
 //           <Table striped bordered hover >
-       
-            
+
 //               <tbody>{renderRows(seller.products)}</tbody>
-            
+
 //           </Table>
 //                 </div>
 //         </ListGroup.Item>
@@ -171,4 +173,3 @@ export default Categories;
 // };
 
 // export default Categories;
-
