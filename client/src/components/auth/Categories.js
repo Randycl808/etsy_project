@@ -21,43 +21,33 @@ const Categories = () => {
 
   const handleSelect = (event) => {
     let selectedCategory = event.target.value;
-
-    setFilterCategories(
-      products.filter((p) => p.category === selectedCategory)
-    );
+    
+    setFilterCategories(products.filter((p) => p.category === selectedCategory));
   };
 
   const renderSelect = (categories) => {
-    console.log(categories);
+    console.log(categories)
     return (
       <div key={categories.id} className="selectBar">
-        <Form.Select
-          defaultValue=""
-          label="Select"
-          onChange={handleSelect}
-          aria-label="Select Category"
-        >
-          <option value="" disabled hidden>
-            Please Choose...
-          </option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
+      <Form.Select defaultValue="" label='Select'  onChange={handleSelect} aria-label="Select Category">
+          <option value="" disabled hidden>Please Choose...</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>{category}</option>
+        ))}
         </Form.Select>
-      </div>
+        </div>
     );
   };
 
   const getSelect = () => {
     let uniqueCategories = getUniqueCategories();
     return renderSelect(uniqueCategories);
+   
   };
 
   const renderFilteredCategoryProperties = () => {
     if (!filteredCategories) {
-      return <h3>Please Choose a Category to continue</h3>;
+      return <p>Please Choose a Category to continue</p>;
     }
 
     return (
@@ -77,22 +67,16 @@ const Categories = () => {
               <td className="Bgc">{c.category}</td>
               <td className="Bgc">{c.price}</td>
             </tr>
-          </thead>
-          <tbody>
-            {filteredCategories.map((c) => (
-              <tr key={c.id}>
-                <td className="">{c.category}</td>
-                <td className="">{c.price}</td>
-              </tr>
             ))}
-          </tbody>
+            
+        </tbody>
         </Table>
-      </div>
+        </div>
     );
   };
 
   return (
-    <div>
+    <div >
       <h1 className="App header headbar text-white">Categories</h1>
       {getSelect()}
       {renderFilteredCategoryProperties()}
@@ -101,4 +85,7 @@ const Categories = () => {
 };
 
 export default Categories;
+
+
+
 
