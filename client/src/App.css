@@ -1,5 +1,9 @@
+.text {
+font-weight: 20px;
+}
 .container {
-color:rgb(38, 141, 179)
+color:rgb(38, 141, 179);
+border-radius: 10px;
 }
 .mainbox {
 width: 400px;
@@ -9,6 +13,13 @@ justify-content: center;
 align-items: center;
 text-align: center;
 background-color: rgba(220, 232, 232, 0.292);
+
+
+}
+.box1{
+background-color: rgb(235, 235, 236);
+border-radius: 10px;
+border-width: 10px;
 
 }
 .mainbox2 {
@@ -27,12 +38,14 @@ width: 400px;
 
 position: flex;
 }
+
 .heading {
 justify-content: center;
 margin: 10px 150px;
 }
 .Bgc {
-background-color: rgba(196, 193, 193, 0.628);
+background-color: rgba(47, 164, 207, 0.595);
+color:rgb(242, 238, 238)
 }
 .row {
 position: relative;
@@ -50,6 +63,11 @@ color: rgb(47, 164, 207);
 font-size: 20px;
 position: relative;
 }
+.datarow3 {
+background:rgb(47, 164, 207);
+}
+
+
 
 .selectBar {
 width:300px;
@@ -85,6 +103,7 @@ Table {
 width: auto;
 margin-bottom: 10px;
 text-align: center;
+
 }
 .datarow {
 background-color: rgb(240, 236, 236)!important;
@@ -161,3 +180,14 @@ text-align: center;
     transform: rotate(360deg);
   }
 }
+.footer1 {
+background-color: rgb(47, 164, 207);
+text-align: center;
+
+bottom: 0;
+width: 100%;
+padding: 10px ;
+color: white;
+position:fixed;
+}
+
