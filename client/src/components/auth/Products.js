@@ -1,8 +1,10 @@
 import axios from "axios";
 import { ListGroup, Table } from "react-bootstrap";
-import {useEffect,useState} from "react";
+import {useEffect,useState, useContext} from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Products = () => {
+  
   const [sellerProducts, setSellerProducts] = useState([]);
 
   useEffect(() => {
@@ -46,6 +48,9 @@ const Products = () => {
       );
     });
   };
+  let auth = useContext(AuthContext)
+  if(!auth.user) {
+  return <p>fgsfd</p>}
 
   const renderData = () => {
     return sellerProducts.map((seller) => {
@@ -53,15 +58,16 @@ const Products = () => {
       return (
         <ListGroup.Item key={seller.id}>
           <div>
+           
             <h4>
-              <u>Seller:</u>
+              <button>Seller:</button>
             </h4>
             <h1>{seller.name}</h1>
             <h6>{seller.email}</h6>
             <hr></hr>
           </div>
-          <Table striped bordered hover variant="dark">
-            <thead>
+          <Table striped bordered hover variant="box1 table table-striped table-hover ">
+            <thead className="Bgc">
               <tr>
                 <th>Product ID</th>
                 <th>Name</th>
@@ -90,7 +96,8 @@ const Products = () => {
   return (
     <>
       <h1 className=" headbar header  text-white">Products</h1>
-     
+      <h2 className="row text">Welcome</h2>
+      <h3 className="row">{auth.user.email}</h3>
       <ListGroup>{renderData()}</ListGroup>
       {/* {JSON.stringify(sellerProducts)} */}
     </>
