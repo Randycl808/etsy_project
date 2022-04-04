@@ -5,8 +5,8 @@ import {Form,Button} from "react-bootstrap";
 
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const auth = useContext(AuthContext);
   // not need but nice for UX
   // const [confirmPassword, setConfirmPassword] = useState('')
@@ -42,7 +42,7 @@ const Login = () => {
       {/* <!-- Checkbox --> */}
       <div className="form-check">
         <input  className="form-check-input" type="checkbox" value="" id="form2Example31"  />
-        <label className="form-check-label" for="form2Example31"> Remember me </label>
+        <label className="form-check-label" form="form2Example31"> Remember me </label>
       </div>
     </div>
 
@@ -62,19 +62,19 @@ const Login = () => {
     <p>Not a member? <a href="/register">Register</a></p>
 
     <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-facebook-f"></i>
+      {/* <i className="fab fa-facebook-f"></i> */}
     </button>
 
     <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-google"></i>
+      {/* <i className="fab fa-google"></i> */}
     </button>
 
     <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-twitter"></i>
+      {/* <i className="fab fa-twitter"></i> */}
     </button>
 
     <button type="button" className="btn btn-link btn-floating mx-1">
-      <i className="fab fa-github"></i>
+      {/* <i className="fab fa-github"></i> */}
     </button>
           </div>
           </div>
