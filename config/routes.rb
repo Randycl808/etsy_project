@@ -6,5 +6,7 @@ namespace :api do
   resources :sellers
   resources :buyers
   resources :products
+  
+  get '/seller_products', to: 'products#show1'
 end
 end

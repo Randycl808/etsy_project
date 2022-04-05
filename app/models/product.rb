@@ -6,4 +6,5 @@ class Product < ApplicationRecord
     .joins('INNER JOIN sellers AS s
       ON s.id = products.seller_id')
   end
+
 end
