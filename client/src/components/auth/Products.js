@@ -88,6 +88,7 @@ const Products = () => {
       let res = await axios.get("/api/products");
       let normalizedSellerProducts = normalizeData(res.data);
       setSellerProducts(normalizedSellerProducts);
+      console.log(normalizedSellerProducts)
     } catch (error) {
       alert("Error occurred getting products");
       console.log(error);

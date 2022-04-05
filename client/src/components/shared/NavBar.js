@@ -35,13 +35,13 @@ const NavBar = () => {
               <Nav.Link as={Link} to="/">
                 Products
               </Nav.Link>
-              <Nav.Link as={Link} to="/find">
+              <Nav.Link as={Link} to="/find_product">
                 Search Products
               </Nav.Link>
               <Nav.Link as={Link} to="/categories">
                 Categories
               </Nav.Link>
-              <NavDropdown title="More" id="collasible-nav-dropdown">
+              <NavDropdown title="More" id="collapsible-nav-dropdown">
                 <NavDropdown.Item as={Link} to="/sellers">
                   Sellers
                 </NavDropdown.Item>
