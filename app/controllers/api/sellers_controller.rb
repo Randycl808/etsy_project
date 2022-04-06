@@ -9,7 +9,7 @@ before_action :set_seller, only: [:show, :destroy, :update]
   end
 
   def show 
-    render json: @seller
+    render json: @seller.buyers
   end
 
   def create 

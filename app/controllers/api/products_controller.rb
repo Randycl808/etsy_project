@@ -8,6 +8,10 @@ before_action :set_product, only: [:show, :destroy, :update]
     render json: Product.products
   end
 
+  def show1
+    render json: Product.seller_products
+  end
+
   def show 
     render json: @product
   end
