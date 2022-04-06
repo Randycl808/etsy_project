@@ -14,8 +14,12 @@ align-items: center;
 text-align: center;
 background-color: rgba(220, 232, 232, 0.292);
 
-
 }
+.welcome {
+justify-content: center!important;
+}
+
+
 .box1{
 background-color: rgb(235, 235, 236);
 border-radius: 10px;
@@ -82,6 +86,10 @@ padding: 10px 30px;
 margin: 10px 10px;
 width: 70px;
 
+}
+.button2 {
+background-color: rgb(47, 164, 207)!important;
+color: rgb(231, 245, 251);
 }
 .button {
 font-weight: 10px;
@@ -190,4 +198,5 @@ padding: 10px ;
 color: white;
 position:fixed;
 }
+
 

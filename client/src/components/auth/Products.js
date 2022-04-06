@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ListGroup, Table } from "react-bootstrap";
+import { Card, ListGroup, Table, Button, Row, Col, Container, CardGroup } from "react-bootstrap";
 import {useEffect,useState, useContext} from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -60,7 +60,7 @@ const Products = () => {
           <div>
            
             <h4>
-              <button>Seller:</button>
+              <button className="button2 Card">Seller:</button>
             </h4>
             <h1>{seller.name}</h1>
             <h6>{seller.email}</h6>
@@ -95,9 +95,19 @@ const Products = () => {
   };
   return (
     <>
-      <h1 className=" headbar header  text-white">Products</h1>
-      <h2 className="row text">Welcome</h2>
-      <h3 className="row">{auth.user.email}</h3>
+      <h1 className=" headbar header  text-white" >Products</h1>
+      <Container fluid='md' className="justify-content">
+      <Card fluid style={{ width: '40rem'}} className="text-center m-4 col-sm">
+  <Card.Header><h2>WELCOME HOME!</h2></Card.Header>
+  <Card.Body>
+    <Card.Title><h2>{auth.user.email} </h2></Card.Title>
+    <Card.Text>
+      Discover more products that you'll love
+    </Card.Text>
+          <Button className="button2" href='/categories'>Search Products</Button>
+  </Card.Body>
+</Card>
+      </Container>
       <ListGroup>{renderData()}</ListGroup>
       {/* {JSON.stringify(sellerProducts)} */}
     </>
