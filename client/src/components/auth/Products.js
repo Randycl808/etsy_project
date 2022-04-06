@@ -41,7 +41,7 @@ const Products = () => {
         <tr key={p.id}>
           <td>{p.id}</td>
           <td>{p.name}</td>
-          <td>{p.price}</td>
+          <td>$ {p.price}</td>
           <td>{p.description}</td>
           <td>{p.category}</td>
         </tr>
