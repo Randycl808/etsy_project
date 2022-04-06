@@ -96,8 +96,8 @@ const Products = () => {
   return (
     <>
       <h1 className=" headbar header  text-white" >Products</h1>
-      <Container fluid='md' className="justify-content">
-      <Card fluid style={{ width: '40rem'}} className="text-center m-4 col-sm">
+      <Container  className="justify-content">
+      <Card style={{ width: '40rem'}} className="text-center m-4 col-sm">
   <Card.Header><h2>WELCOME HOME!</h2></Card.Header>
   <Card.Body>
     <Card.Title><h2>{auth.user.email} </h2></Card.Title>
